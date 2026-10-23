@@ -3,6 +3,7 @@ package ie.atu.cicd1.catalog.cicd1catalogservice.controller;
 import ie.atu.cicd1.catalog.cicd1catalogservice.model.Product;
 import ie.atu.cicd1.catalog.cicd1catalogservice.service.ProductService;
 import org.springframework.web.bind.annotation.*;
+import ie.atu.cicd1.catalog.cicd1catalogservice.model.CreateProductRequest;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -22,8 +23,8 @@ public class ProductController {
     }
 
     @PostMapping
-    public Product createProduct(@RequestBody Product product) {
-        return productService.create(product);
+    public Product create(@RequestBody CreateProductRequest request) {
+        return productService.create(request);
     }
 
     @GetMapping("/min-price")
